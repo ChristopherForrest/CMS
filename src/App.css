@@ -30,3 +30,60 @@
     transform: rotate(360deg);
   }
 }
+.productShowcaseOuter{
+  border:black 2px solid;
+ 
+  /* margin-right:25vw;
+  margin-left:25vw;
+  margin-top:10vh;  */
+  margin-bottom:30px;
+
+ 
+  
+
+}
+/* .productShowcaseInner{
+
+
+} */
+
+.sandhurstLogo{
+ 
+ 
+  width:100%;
+  margin-bottom:10px;
+  
+  
+ 
+}
+
+.contactInfo{
+  text-align:left;
+  margin-left: 30px; 
+  margin-top:10px;
+  color:rgb(202, 0, 0);
+  font-size:13pt;
+
+}
+
+
+.productInfo{
+  text-align:left;
+  margin-top:30px;
+  margin-left:30px;
+  margin-right: 30px;
+}
+
+.nutritionTable{
+  table-layout: fixed;
+}
+
+.otherTable{
+  margin-top:600px;
+
+}
+
+.padder{
+  margin-top:300px;
+}
+

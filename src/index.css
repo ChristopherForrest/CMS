@@ -12,12 +12,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.buttonRow{
+/* .buttonRow{
   
 }
 
 .currencyTable{
-}
+} */
 
 .currencyButton{
   width:100%!important;
@@ -34,5 +34,6 @@ td:active{
 .loadingNotification{
   font-size:50px;
   font-weight:bolder;
-  margin-top:35vh;
+  margin-top:11vh;
+
 }

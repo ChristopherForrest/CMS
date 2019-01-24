@@ -7,19 +7,25 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  // UncontrolledDropdown,
+  // DropdownToggle,
+  // DropdownMenu,
+  // DropdownItem 
+} from 'reactstrap';
 
 
+  
+
+
+    
   export default class DashNavbar extends React.Component {
     constructor(props) {
       super(props);
-  
       this.toggle = this.toggle.bind(this);
+    
       this.state = {
-        isOpen: false
+        isOpen: false,
+
       };
     }
     toggle() {
@@ -28,38 +34,23 @@ import {
       });
     }
     render() {
+        
       return (
-        <div>
-          <Navbar color="light" light expand="md">
-            <NavbarBrand href="/">Sandhurst CMS</NavbarBrand>
+       
+          <Navbar color="light" light expand="md" className="sticky-top" style={{borderBottom: 'rgb(189, 184, 184) solid 1px'}}>
+            <NavbarBrand  href="/dashboard"><img src="./Sandhurst_Logo.jpg" alt="Sandhurst Logo"></img></NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink href="/components/">Research Documentation</NavLink>
+                  <NavLink href="/">Logout</NavLink>
                 </NavItem>
        
-                <UncontrolledDropdown nav inNavbar>
-                  <DropdownToggle nav caret>
-                    Options
-                  </DropdownToggle>
-                  <DropdownMenu right>
-                    <DropdownItem>
-                      Buy
-                    </DropdownItem>
-                    <DropdownItem>
-                      Sell
-                    </DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>
-                      Logout
-                    </DropdownItem>
-                  </DropdownMenu>
-                </UncontrolledDropdown>
+                
               </Nav>
             </Collapse>
           </Navbar>
-        </div>
+     
       );
     }
   }
