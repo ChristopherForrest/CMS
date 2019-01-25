@@ -7,15 +7,16 @@ import { Table} from 'reactstrap';
 
 export default class ProductShowcase extends React.Component {
 
-	constructor() {
-		super()
+	constructor(props) {
+		super(props)
 		this.state = {
-			data:undefined
+			data:undefined,
+	
 		}
 	}
 
 	async componentDidMount(){
-
+		console.log(this.props.location.state)
 	}
 
 	render() {
@@ -34,34 +35,34 @@ export default class ProductShowcase extends React.Component {
 					</div>
 					<div className="productInfo">
 						<div>
-							<strong>PRODUCT SPECIFICATION:</strong> DRIED TOMATOES
+							<strong>PRODUCT SPECIFICATION:</strong> {this.props.location.state.something['Product Name']}
 						</div>
 						<div>
-							<strong>PRODUCT CODE:</strong> DRYTOM10
+							<strong>PRODUCT CODE:</strong> {this.props.location.state.something['Product Code']}
 						</div>
 						<div>
-							<strong>GENERAL DESCRIPTION:</strong> Sun-dried tomato halves, sulphur treated
+							<strong>GENERAL DESCRIPTION:</strong> {this.props.location.state.something['Rich Description']}
 						</div>
 						<div>
-							<strong>COUNTRY OF ORIGIN:</strong> Turkey
+							<strong>COUNTRY OF ORIGIN:</strong> {this.props.location.state.something['Country']}
 						</div>
 						<div>
-							<strong>INGREDIENTS:</strong> Tomato, preservative (sodium metabisulphite)
+							<strong>INGREDIENTS:</strong> {this.props.location.state.something['Ingredients ( by descending weight ) Characterising ingredient/s to include percentage.']}
 						</div>
 						<div>
-							<strong>WEIGHT DECLARATION:</strong> 2 x 5kg
+							<strong>WEIGHT DECLARATION:</strong> {this.props.location.state.something['Pack Size ( Net Weight ) ']}
 						</div>
 						<div>
-							<strong>PACKAGING:</strong> Vacuum pack
+							<strong>PACKAGING:</strong> {this.props.location.state.something['Packaging Material']}
 						</div>
 						<div>
-							<strong>SHELF LIFE:</strong>18 months from the production date at below storage conditions.
+							<strong>SHELF LIFE:</strong>{this.props.location.state.something['Shelf Life from date of manufacture (days)'] +  " days."} 
 						</div>
 						<div>
-							<strong>RECOMMENDED STORAGE CONDITIONS:</strong> Recommended to keep under 4°C for colour stability.
+							<strong>RECOMMENDED STORAGE CONDITIONS:</strong> {this.props.location.state.something['Recommended Storage Conditions']} 
 						</div>
 						<div>
-							<strong>MANDATORY WARNING &amp; ADVISORY STATEMENT:</strong> Contains sulphites.
+							<strong>MANDATORY WARNING &amp; ADVISORY STATEMENT:</strong> {this.props.location.state.something['Statements']} 
 						</div>
 						<hr></hr> 
 						<div>

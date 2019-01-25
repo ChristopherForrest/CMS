@@ -1,13 +1,14 @@
 import React from 'react';
 import { Table, Button } from 'reactstrap';
 import Tabletop from 'tabletop';
-
+import { BrowserRouter as Router, Route, Redirect, Link } from 'react-router-dom';
 
 export default class OverviewTable extends React.Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
-            data: undefined
+            data: undefined,
+
 
         }
     }
@@ -52,7 +53,7 @@ export default class OverviewTable extends React.Component {
                                     <th></th>
                                 </tr>
                                 {this.state.data.map(obj =>
-                                    <tr className="dataRow">
+                                    <tr className="dataRow" key={obj['Product Code']}>
                                         <td>{obj['Product Code']}</td>
                                         <td>{obj['Product Name']}</td>
                                         <td>{obj['Factory']}</td>
@@ -61,7 +62,21 @@ export default class OverviewTable extends React.Component {
                                         <td>{obj['Suitable for Vegans?']}</td>
                                         <td>{obj['Suitable for Kosher?']}</td>
                                         <td>{obj['Suitable for Halal?']}</td>
-                                        <td className="buttonRow"><Button color="danger" className="currencyButton">View</Button>{' '}</td>
+                                        <td className="buttonRow">
+                                
+                                        <Button color="danger" className="currencyButton" onClick={() => {
+                                            console.log(obj['Product Code'])
+                                            this.props.history.push({
+                                                pathname:"/productshowcase",
+                                                state:{
+                                                    something:obj,
+                                                }
+                                            })
+
+                                        }}>
+                                        View
+                                        </Button>{}
+                                        </td>
                                     </tr>
                                 )}
                             </tbody>
@@ -69,7 +84,6 @@ export default class OverviewTable extends React.Component {
 
                     )
                     :
-                    // : <img className="loadingNotification" src="charmander-loading-gif.gif" alt="Loading..." />
                      <img className="loadingNotification" src="ajax-loading-gif.gif" alt="Loading..." />
                 }
             </div>
