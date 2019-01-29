@@ -17,19 +17,7 @@ const config = {
 
 class App extends Component {
 
-
-
-  async login() {
-    // Redirect to '/' after login
-    this.props.auth.login('/dashboard');
-  }
-
-  async logout() {
-    // Redirect to '/' after logout
-    this.props.auth.logout('/dashboard');
-  }
-
-
+  
 
   render() {
    
@@ -41,6 +29,7 @@ class App extends Component {
             <Route path='/implicit/callback' component={ImplicitCallback} />
             <SecureRoute path='/' exact={true} component={DashNavbar} />
             <SecureRoute path='/' exact={true} component={OverviewTable} />
+
             <SecureRoute path='/productshowcase' exact={true} component={ProductShowcase}  />
           </Security>
         </Router>

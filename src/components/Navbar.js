@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   Collapse,
   Navbar,
@@ -7,27 +7,54 @@ import {
   Nav,
   NavItem,
   NavLink,
+  Button
   // UncontrolledDropdown,
   // DropdownToggle,
   // DropdownMenu,
   // DropdownItem 
 } from 'reactstrap';
-
+import { withAuth } from '@okta/okta-react';
 
   
 
 
     
-  export default class DashNavbar extends React.Component {
+  export default withAuth(class DashNavbar extends Component {
     constructor(props) {
       super(props);
       this.toggle = this.toggle.bind(this);
-    
+      this.state = { authenticated: null };
+      this.checkAuthentication = this.checkAuthentication.bind(this);
+      this.checkAuthentication();
+      this.login = this.login.bind(this);
+      this.logout = this.logout.bind(this);
       this.state = {
         isOpen: false,
-
       };
     }
+
+    async checkAuthentication() {
+      const authenticated = await this.props.auth.isAuthenticated();
+      if (authenticated !== this.state.authenticated) {
+        this.setState({ authenticated });
+      }
+    }
+    
+
+    componentDidUpdate() {
+      this.checkAuthentication();
+    }
+    
+    async login() {
+      // Redirect to '/' after login
+      this.props.auth.login('/');
+    }
+  
+    async logout() {
+      // Redirect to '/' after logout
+      this.props.auth.logout('/');
+    }
+
     toggle() {
       this.setState({
         isOpen: !this.state.isOpen
@@ -43,14 +70,12 @@ import {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink href="/" onClick={console.log(this.state)}>Logout</NavLink>
+                  <NavLink><Button color="danger" onClick={this.logout}>Logout</Button></NavLink>
                 </NavItem>
-       
-                
-              </Nav>
+                     </Nav>
             </Collapse>
           </Navbar>
      
       );
     }
-  }
+  })

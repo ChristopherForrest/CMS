@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { Table} from 'reactstrap';
 
@@ -25,6 +24,7 @@ export default class ProductShowcase extends React.Component {
 				<div className="productShowcaseInner">
 					<div>
 						<div className="sandhurstLogo"><img className="sandhurstLogo" src="Sandhurst-Fine-Foods---Website-Form-(Header)---v1-2.png" alt="Sandhurst Logo"></img></div>
+
 					</div>
 					<div className="productInfo">
 						<div>
