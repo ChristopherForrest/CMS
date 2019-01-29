@@ -5,11 +5,8 @@ import DashNavbar from './components/Navbar'
 import OverviewTable from './components/OverviewTable'
 import ProductShowcase from './components/ProductShowcase'
 import { SecureRoute, Security, ImplicitCallback } from '@okta/okta-react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-// import Tester from './components/Tester'
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import Home from './Home';
-
-
 
 const config = {
   issuer: 'https://dev-493904.oktapreview.com/oauth2/default',
@@ -19,23 +16,32 @@ const config = {
 
 
 class App extends Component {
-  
+
+
+
+  async login() {
+    // Redirect to '/' after login
+    this.props.auth.login('/dashboard');
+  }
+
+  async logout() {
+    // Redirect to '/' after logout
+    this.props.auth.logout('/dashboard');
+  }
+
 
 
   render() {
-
    
     return (
       <div className="App">
-
         <Router>
           <Security issuer={config.issuer} client_id={config.client_id} redirect_uri={config.redirect_uri}>
-            <Route path='/' exact={true} component={Home} />
+            {/* <SecureRoute path='/' exact={true} component={OverviewTable} /> */}
             <Route path='/implicit/callback' component={ImplicitCallback} />
-            <SecureRoute path='/dashboard' exact={true} component={DashNavbar} />
-            <SecureRoute path='/dashboard' exact={true} component={OverviewTable} />
-            <SecureRoute path='/productshowcase' exact={true} component={ProductShowcase} />
-            {/* <SecureRoute path='/tester' exact={true} component={Tester} /> */}
+            <SecureRoute path='/' exact={true} component={DashNavbar} />
+            <SecureRoute path='/' exact={true} component={OverviewTable} />
+            <SecureRoute path='/productshowcase' exact={true} component={ProductShowcase}  />
           </Security>
         </Router>
 

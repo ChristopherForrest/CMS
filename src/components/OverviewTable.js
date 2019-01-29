@@ -14,12 +14,6 @@ export default class OverviewTable extends React.Component {
     }
 
     async componentDidMount() {
-        // const response = await fetch('https://api.coinmarketcap.com/v1/ticker/?limit=100')
-        // const json = await response.json();
-        // this.setState({ data: json });
-        // console.log(this.state.data)
-
-
         Tabletop.init({
             key: '1E5u-bqDwzZK3acCfbRD4qWKAahNMn-hbFKojVCgcyNI',
             callback: googleData => {

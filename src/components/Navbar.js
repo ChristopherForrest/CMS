@@ -38,12 +38,12 @@ import {
       return (
        
           <Navbar color="light" light expand="md" className="sticky-top" style={{borderBottom: 'rgb(189, 184, 184) solid 1px'}}>
-            <NavbarBrand  href="/dashboard"><img src="./Sandhurst_Logo.jpg" alt="Sandhurst Logo"></img></NavbarBrand>
+            <NavbarBrand  href="/"><img src="./Sandhurst_Logo.jpg" alt="Sandhurst Logo"></img></NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink href="/">Logout</NavLink>
+                  <NavLink href="/" onClick={console.log(this.state)}>Logout</NavLink>
                 </NavItem>
        
                 
