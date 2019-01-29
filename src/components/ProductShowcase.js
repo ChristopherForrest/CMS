@@ -25,13 +25,7 @@ export default class ProductShowcase extends React.Component {
 				<div className="productShowcaseInner">
 					<div>
 						<div className="sandhurstLogo"><img className="sandhurstLogo" src="Sandhurst-Fine-Foods---Website-Form-(Header)---v1-2.png" alt="Sandhurst Logo"></img></div>
-						{/* <div className="contactInfo">
-							<div><strong>Sandhurst Fine Foods</strong></div>
-							<div>4-6 Kiama Street, Miranda, 2228, NSW, Australia</div>
-							<div>Email: <u>info@sandhurstfinefoods.come.au</u></div>
-							<div>Website: <u>www.sandhurstfinefoods.com.au</u></div>
-							<div>Tel: +61 2 9522 4522; Fax: +61 2 9522 4139</div>
-						</div> */}
+
 					</div>
 					<div className="productInfo">
 						<div>
@@ -66,50 +60,50 @@ export default class ProductShowcase extends React.Component {
 						</div>
 						<hr></hr> 
 						<div>
-							<strong>NUTRITIONAL INFORMATION:</strong> Servings per package: 10; Serving size: 100g
+							<strong>NUTRITIONAL INFORMATION:</strong> Servings per package: {this.props.location.state.something['Number of servings per package']} ; Serving size: {this.props.location.state.something['Serving Size']}
 						</div>
 						<br></br>
 						<Table bordered>
 							<tbody>
 								<tr>
 									<th></th>
-									<th>Average 50g qty per serve</th>
-									<th>Average qty per 100g</th>
+									<th>Average per serve</th>
+							     	<th>Average qty per 100g</th>
 								</tr>
 								<tr>
 									<td>Energy</td>
-									<td>790kJ</td>
-									<td>790kJ</td>
+									<td>{this.props.location.state.something['Energy (kJ) ( Average Quantity Per Serve )']}kJ</td>
+									<td>{this.props.location.state.something['Energy (kJ) ( Average Quantity Per 100g / mL)']}kJ</td>
 								</tr>
 								<tr>
 									<td>Protein</td>
-									<td>11.2g</td>
-									<td>11.2g</td>
+									<td>{this.props.location.state.something['Protein, total (g) ( Average Quantity Per Serve )']}g</td>
+									<td>{this.props.location.state.something['Protein, total (g) ( Average Quantity Per 100g / mL )']}g</td>
 								</tr>
 								<tr>
 									<td>Fat, total</td>
-									<td>1g</td>
-									<td>1g</td>
+									<td>{this.props.location.state.something['Fat, total (g) ( Average Quantity Per Serve ) ']}g</td>
+									<td>{this.props.location.state.something['Fat, total (g) (Average Quantity Per 100g / mL)']}g</td>
 								</tr>
 								<tr>
 									<td>Saturated</td>
-									<td>0.3g</td>
-									<td>0.3g</td>
+									<td>{this.props.location.state.something['Saturated Fat (g) ( Average Quantity Per Serve )']}g</td>
+									<td>{this.props.location.state.something['Saturated Fat (g) ( Average Quantity Per 100g / mL )']}g</td>
 								</tr>
 								<tr>
 									<td>Carbohydrate</td>
-									<td>28.1g</td>
-									<td>28.1g</td>
+									<td>{this.props.location.state.something['Carbohydrate (g) ( Average Quantity Per Serve )']}g</td>
+									<td>{this.props.location.state.something['Carbohydrate (g) (  Average Quantity Per 100g / mL ) ']}g</td>
 								</tr>
 								<tr>
 									<td>Sugars</td>
-									<td>23g</td>
-									<td>23g</td>
+									<td>{this.props.location.state.something['Sugars (g) ( Average Quantity Per Serve )']}g</td>
+									<td>{this.props.location.state.something['Sugars (g) ( Average Quantity Per 100g / mL )']}g</td>
 								</tr>
 								<tr>
 									<td>Sodium</td>
-									<td>1330mg</td>
-									<td>1330mg</td>
+									<td>{this.props.location.state.something['Sodium (g) ( Average Quantity Per Serve )']}g</td>
+									<td>{this.props.location.state.something['Sodium (g) ( Average Quantity Per 100g / mL )']}g</td>
 								</tr>
 							</tbody>
 						</Table>
@@ -130,15 +124,15 @@ export default class ProductShowcase extends React.Component {
 								</tr>
 								<tr>
 									<td>a. Taste</td>
-									<td>From brick red to brown colour</td>
+									<td>{this.props.location.state.something['Flavour & Aroma']}</td>
 								</tr>
 								<tr>
 									<td>b. Colour</td>
-									<td> Typical salted sun-dried tomato flavor. No off flavors</td>
+									<td>{this.props.location.state.something['Appearance & Colour']}</td>
 								</tr>
 								<tr>
 									<td>b. Shape</td>
-									<td> - </td>
+									<td>{this.props.location.state.something['Shape']}</td>
 								</tr>
                                 <tr><td><br></br></td></tr>
 								<tr>
@@ -147,23 +141,23 @@ export default class ProductShowcase extends React.Component {
 								</tr>
 								<tr>
 									<td>a. Sulphur</td>
-									<td>Minimum 3000ppm (Monier Williams method)</td>
+									<td>{this.props.location.state.something['Sulphites (ppm) [ If sulphites present please specify amount in ppm ]']}</td>
 								</tr>
 								<tr>
 									<td>b. Moisture</td>
-									<td>Maximum 25%</td>
+									<td>{this.props.location.state.something['']}</td>
 								</tr>
 								<tr>
 									<td>c. Salt</td>
-									<td> - </td>
+									<td>{this.props.location.state.something['Salt ( % )']}%</td>
 								</tr>
 								<tr>
 									<td>d. Acid</td>
-									<td> - </td>
+									<td>{this.props.location.state.something['Acid ( % )']}%</td>
 								</tr>
 								<tr>
-									<td>e. </td>
-									<td> - </td>
+									<td>e. pH </td>
+									<td>{this.props.location.state.something['pH']}</td>
 								</tr>
 								<tr><td><br></br></td></tr>
 								<tr>
@@ -172,38 +166,38 @@ export default class ProductShowcase extends React.Component {
 								</tr>
 								<tr>
 									<td>a. Total Count</td>
-									<td>&lt;1,000,000 cfu/g</td>
+									<td>{this.props.location.state.something['']}</td>
 								</tr>
 								<tr>
 									<td>b. Coliform</td>
-									<td>&lt;1000 cfu/g</td>
+									<td>{this.props.location.state.something['']}</td>
 								</tr>
 								<tr>
 									<td>c. E.Coli</td>
-									<td>&lt;10 cfu/g</td>
+									<td>{this.props.location.state.something['Escherichia Coli ( cfu/g )']}</td>
 								</tr>
 								<tr>
 									<td>d. Yeast</td>
-									<td>&lt;10000 cfu/g</td>
+									<td>{this.props.location.state.something['Yeasts & Moulds ( cfu/g )']}</td>
 								</tr>
 								<tr>
 									<td>e. Mould</td>
-									<td>&lt;10000 cfu/g</td>
+									<td>{this.props.location.state.something['']}</td>
 								</tr>
 								<tr><td><br></br></td></tr>
 								<tr>
 									<td><strong>4. ALLERGENS</strong> </td>
-									<td>Contains sulphites.</td>
+									<td>{this.props.location.state.something['']}</td>
 								</tr>
 								<tr><td><br></br></td></tr>
 								<tr>
 									<td><strong>5. HALAL</strong> </td>
-									<td>Yes</td>
+									<td>{this.props.location.state.something['']}</td>
 								</tr>
 								<tr><td><br></br></td></tr>
 								<tr>
 									<td><strong>6. GMO</strong> </td>
-									<td>GMO free</td>
+									<td>{this.props.location.state.something['']}</td>
 								</tr>
 							</tbody>
 						</Table>
