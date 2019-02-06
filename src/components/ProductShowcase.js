@@ -34,22 +34,22 @@ export default class ProductShowcase extends React.Component {
 							<strong>PRODUCT CODE:</strong> {this.props.location.state.something['Product Code']}
 						</div>
 						<div>
-							<strong>GENERAL DESCRIPTION:</strong> {this.props.location.state.something['Rich Description']}
-						</div>
-						<div>
 							<strong>COUNTRY OF ORIGIN:</strong> {this.props.location.state.something['Country']}
 						</div>
 						<div>
 							<strong>INGREDIENTS:</strong> {this.props.location.state.something['Ingredients ( by descending weight ) Characterising ingredient/s to include percentage.']}
 						</div>
 						<div>
-							<strong>WEIGHT DECLARATION:</strong> {this.props.location.state.something['Pack Size ( Net Weight ) ']}
+							<strong>WEIGHT DECLARATION:</strong> Net Weight: {this.props.location.state.something['Pack Size ( Net Weight ) ']} | Drained Weight : {this.props.location.state.something['Drained Weight ( Grams )']}
 						</div>
 						<div>
-							<strong>PACKAGING:</strong> {this.props.location.state.something['Packaging Material']}
+							<strong>PACKAGING:</strong> {this.props.location.state.something['Pack Size ( Net Weight ) ']} x {this.props.location.state.something['Carton Quantity']}
 						</div>
 						<div>
-							<strong>SHELF LIFE:</strong>{this.props.location.state.something['Shelf Life from date of manufacture (days)'] +  " days."} 
+							<strong>SHELF LIFE:</strong> {this.props.location.state.something['Shelf Life from date of manufacture (days)'] +  " days."} 
+						</div>
+						<div>
+							<strong>SHELF LIFE AFTER OPENING:</strong> {this.props.location.state.something['Recommended storage conditions and shelf life once opened']} 
 						</div>
 						<div>
 							<strong>RECOMMENDED STORAGE CONDITIONS:</strong> {this.props.location.state.something['Recommended Storage Conditions']} 
@@ -164,25 +164,14 @@ export default class ProductShowcase extends React.Component {
 									<td></td>
 								</tr>
 								<tr>
-									<td>a. Total Count</td>
-									<td>{this.props.location.state.something['']}</td>
-								</tr>
-								<tr>
-									<td>b. Coliform</td>
-									<td>{this.props.location.state.something['']}</td>
-								</tr>
-								<tr>
-									<td>c. E.Coli</td>
+									<td>a. E.Coli</td>
 									<td>{this.props.location.state.something['Escherichia Coli ( cfu/g )']}</td>
 								</tr>
 								<tr>
-									<td>d. Yeast</td>
+									<td>b. Yeast &#38; Mould</td>
 									<td>{this.props.location.state.something['Yeasts & Moulds ( cfu/g )']}</td>
 								</tr>
-								<tr>
-									<td>e. Mould</td>
-									<td>{this.props.location.state.something['']}</td>
-								</tr>
+
 								<tr><td><br></br></td></tr>
 								<tr>
 									<td><strong>4. ALLERGENS</strong> </td>
