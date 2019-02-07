@@ -11,7 +11,7 @@ export default class ProductShowcase extends React.Component {
 		super(props)
 		this.state = {
 			data:undefined,
-	
+			
 		}
 	}
 
@@ -40,6 +40,9 @@ export default class ProductShowcase extends React.Component {
 							<strong>INGREDIENTS:</strong> {this.props.location.state.something['Ingredients ( by descending weight ) Characterising ingredient/s to include percentage.']}
 						</div>
 						<div>
+							<strong>PERCENTAGE OF AUSTRALIAN INGREDIENTS</strong> {this.props.location.state.something['Percentage of Australian Ingredients']}
+						</div>
+						<div>
 							<strong>WEIGHT DECLARATION:</strong> Net Weight: {this.props.location.state.something['Pack Size ( Net Weight ) ']} | Drained Weight : {this.props.location.state.something['Drained Weight ( Grams )']}
 						</div>
 						<div>
@@ -55,7 +58,7 @@ export default class ProductShowcase extends React.Component {
 							<strong>RECOMMENDED STORAGE CONDITIONS:</strong> {this.props.location.state.something['Recommended Storage Conditions']} 
 						</div>
 						<div>
-							<strong>MANDATORY WARNING &amp; ADVISORY STATEMENT:</strong> {this.props.location.state.something['Statements']} 
+							<strong>MANDATORY WARNING &amp; ADVISORY STATEMENT:</strong> {this.props.location.state.something['Statement']} 
 						</div>
 						<hr></hr> 
 						<div>
@@ -148,11 +151,11 @@ export default class ProductShowcase extends React.Component {
 								</tr>
 								<tr>
 									<td>c. Salt</td>
-									<td>{this.props.location.state.something['Salt ( % )']}%</td>
+									<td>{this.props.location.state.something['Salt ( % )']}</td>
 								</tr>
 								<tr>
 									<td>d. Acid</td>
-									<td>{this.props.location.state.something['Acid ( % )']}%</td>
+									<td>{this.props.location.state.something['Acid ( % )']}</td>
 								</tr>
 								<tr>
 									<td>e. pH </td>
@@ -171,21 +174,38 @@ export default class ProductShowcase extends React.Component {
 									<td>b. Yeast &#38; Mould</td>
 									<td>{this.props.location.state.something['Yeasts & Moulds ( cfu/g )']}</td>
 								</tr>
+								<tr>
+									<td>c. Salmonella </td>
+									<td>{this.props.location.state.something['Salmonella ( cfu/g )']}</td>
+								</tr>
+								<tr>
+									<td>d. B. Listeria </td>
+									<td>{this.props.location.state.something['Listeria Monocytogenes ( cfu/g )']}</td>
+								</tr>
+								<tr>
+									<td>e. B. Cerius </td>
+									<td>{this.props.location.state.something['Bacillus Cereus ( cfu/g )']}</td>
+								</tr>
+
 
 								<tr><td><br></br></td></tr>
 								<tr>
 									<td><strong>4. ALLERGENS</strong> </td>
-									<td>{this.props.location.state.something['']}</td>
+									<td>{
+										
+										this.props.location.state.something['']
+										
+										}</td>
 								</tr>
 								<tr><td><br></br></td></tr>
 								<tr>
 									<td><strong>5. HALAL</strong> </td>
-									<td>{this.props.location.state.something['']}</td>
+									<td>{this.props.location.state.something['Suitable for Halal?']}</td>
 								</tr>
 								<tr><td><br></br></td></tr>
 								<tr>
-									<td><strong>6. GMO</strong> </td>
-									<td>{this.props.location.state.something['']}</td>
+									<td><strong>6. GMO Free?</strong> </td>
+									<td>{this.props.location.state.something['GMO Free? ( Genetically modified organism )']}</td>
 								</tr>
 							</tbody>
 						</Table>

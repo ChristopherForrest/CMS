@@ -65,8 +65,12 @@ export default class OverviewTable extends React.Component {
                                                 state:{
                                                     something:obj,
                                                 }
-                                            })
+                                            }
+                                            )
 
+                                            
+
+                                            
                                         }}>
                                         View
                                         </Button>{}
