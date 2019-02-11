@@ -5,8 +5,8 @@ import DashNavbar from './components/Navbar'
 import OverviewTable from './components/OverviewTable'
 import ProductShowcase from './components/ProductShowcase'
 import { SecureRoute, Security, ImplicitCallback } from '@okta/okta-react';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
-import Home from './Home';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 
 const config = {
   issuer: 'https://dev-493904.oktapreview.com/oauth2/default',

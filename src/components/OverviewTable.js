@@ -1,7 +1,6 @@
 import React from 'react';
 import { Table, Button } from 'reactstrap';
 import Tabletop from 'tabletop';
-import { BrowserRouter as Router, Route, Redirect, Link } from 'react-router-dom';
 
 export default class OverviewTable extends React.Component {
     constructor(props) {
@@ -17,7 +16,6 @@ export default class OverviewTable extends React.Component {
         Tabletop.init({
             key: '1E5u-bqDwzZK3acCfbRD4qWKAahNMn-hbFKojVCgcyNI',
             callback: googleData => {
-              console.log(googleData)
               this.setState({
                 data: googleData
               })
@@ -59,7 +57,6 @@ export default class OverviewTable extends React.Component {
                                         <td className="buttonRow">
                                 
                                         <Button color="danger" className="currencyButton" onClick={() => {
-                                            console.log(obj['Product Code'])
                                             this.props.history.push({
                                                 pathname:"/productshowcase",
                                                 state:{
