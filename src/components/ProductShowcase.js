@@ -16,7 +16,7 @@ export default class ProductShowcase extends React.Component {
 	}
 
 	async componentDidMount(){
-		console.log(this.props.location.state)
+		// console.log(this.props.location.state)
 	}
 
 	render() {
