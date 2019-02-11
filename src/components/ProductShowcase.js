@@ -193,7 +193,7 @@ export default class ProductShowcase extends React.Component {
 									<td><strong>4. ALLERGENS</strong> </td>
 									<td>{
 										
-										this.props.location.state.something['']
+										this.props.location.state.something['Allergens Present?']
 										
 										}</td>
 								</tr>
