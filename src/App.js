@@ -7,7 +7,6 @@ import ProductShowcase from './components/ProductShowcase'
 import { SecureRoute, Security, ImplicitCallback } from '@okta/okta-react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-
 const config = {
   issuer: 'https://dev-493904.oktapreview.com/oauth2/default',
   redirect_uri: window.location.origin + '/implicit/callback',
@@ -16,8 +15,6 @@ const config = {
 
 
 class App extends Component {
-
-  
 
   render() {
    

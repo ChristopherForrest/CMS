@@ -7,11 +7,8 @@ export default class OverviewTable extends React.Component {
         super(props)
         this.state = {
             data: undefined,
-
-
         }
     }
-
     async componentDidMount() {
         Tabletop.init({
             key: '1E5u-bqDwzZK3acCfbRD4qWKAahNMn-hbFKojVCgcyNI',
@@ -22,9 +19,7 @@ export default class OverviewTable extends React.Component {
             },
             simpleSheet:true
           })
-
     }
-
     render() {
         const { data } = this.state
         return (
@@ -63,11 +58,7 @@ export default class OverviewTable extends React.Component {
                                                     something:obj,
                                                 }
                                             }
-                                            )
-
-                                            
-
-                                            
+                                            )     
                                         }}>
                                         View
                                         </Button>{}
@@ -84,5 +75,4 @@ export default class OverviewTable extends React.Component {
             </div>
         )
     }
-
 }
