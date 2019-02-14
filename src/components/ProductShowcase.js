@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { Table} from 'reactstrap';
+import { Table, Button} from 'reactstrap';
 
 
 
@@ -10,17 +10,21 @@ export default class ProductShowcase extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			data:undefined,
-			
+			data:undefined,	
 		}
 	}
 
 	async componentDidMount(){
-		// console.log(this.props.location.state)
+		
 	}
 
 	render() {
+
+
 		return (
+			<div>
+				{this.props.location.state ? (
+
 			<div className="productShowcaseOuter">
 				<div className="productShowcaseInner">
 					<div>
@@ -215,7 +219,25 @@ export default class ProductShowcase extends React.Component {
 					</div>
 				</div>
 			</div>
+				)
+				:
+				(
+					<div className="badRequestForm">
+					<img src="charmander-loading-gif.gif" alt="Loading..." />
+						<h1>ERROR</h1>
+						<p>You have tried to make an invalid request!</p>
+						<Button color="danger" className="currencyButton" onClick={() => {
+							this.props.history.push({
+								pathname:"/",
+							})     
+						}}>Dashboard</Button>
+					</div>
+				)
+			}
 
+			</div>	
+			
+		
 		)
 	}
 }
