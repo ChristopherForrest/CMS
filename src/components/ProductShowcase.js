@@ -145,10 +145,10 @@ export default class ProductShowcase extends React.Component {
 									<td>a. Sulphur</td>
 									<td>{this.props.location.state.something['Sulphites (ppm) [ If sulphites present please specify amount in ppm ]']}</td>
 								</tr>
-								<tr>
+								{/* <tr>
 									<td>b. Moisture</td>
 									<td>{this.props.location.state.something['']}</td>
-								</tr>
+								</tr> */}
 								<tr>
 									<td>c. Salt</td>
 									<td>{this.props.location.state.something['Salt ( % )']}</td>
