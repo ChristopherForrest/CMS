@@ -44,7 +44,7 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## User Flow Chart
-![User Flow Chart](https://github.com/ChristopherForrest/CMS/documentation_assets/UserFlowChart.jpg)
+![User Flow Chart](https://github.com/ChristopherForrest/CMS/documentationAssets/UserFlowChart.jpg)
 ## Styling
 
 ## App Outline
