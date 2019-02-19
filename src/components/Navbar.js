@@ -15,10 +15,6 @@ import {
 } from 'reactstrap';
 import { withAuth } from '@okta/okta-react';
 
-  
-
-
-    
   export default withAuth(class DashNavbar extends Component {
     constructor(props) {
       super(props);
@@ -46,12 +42,10 @@ import { withAuth } from '@okta/okta-react';
     }
     
     async login() {
-      // Redirect to '/' after login
       this.props.auth.login('/');
     }
   
     async logout() {
-      // Redirect to '/' after logout
       this.props.auth.logout('/');
     }
 
