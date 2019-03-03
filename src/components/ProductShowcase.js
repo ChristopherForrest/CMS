@@ -28,7 +28,7 @@ export default class ProductShowcase extends React.Component {
 			<div className="productShowcaseOuter">
 				<div className="productShowcaseInner">
 					<div>
-						<div className="sandhurstLogo"><img className="sandhurstLogo" src="Sandhurst-Fine-Foods---Website-Form-(Header)---v1-2.png" alt="Sandhurst Logo"></img></div>
+						<div className="sandhurstLogo"><img className="sandhurstLogo" src="Sandhurst-Fine-Foods---Website-Form-(Header)---v1-3.png" alt="Sandhurst Logo"></img></div>
 					</div>
 					<div className="productInfo">
 						<div>
